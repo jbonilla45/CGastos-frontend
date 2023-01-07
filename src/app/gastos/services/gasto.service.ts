@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class GastoService {
-  url = 'http://localhost:4000/api/gastos/';
+  url = 'https://cgastos-backend-production.up.railway.app/api/gastos';
 
   constructor(private http: HttpClient) {}
 
