@@ -1,0 +1,29 @@
+import { Gasto } from './../models/gasto';
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class GastoService {
+  url = 'http://localhost:4000/api/gastos/';
+
+  constructor(private http: HttpClient) {}
+
+  createGasto(gasto: Gasto): Observable<any> {
+    return this.http.post(this.url, gasto);
+  }
+
+  listGastos(): Observable<any> {
+    return this.http.get(this.url);
+  }
+
+  updateGasto() {}
+
+  getGasto() {
+    return this.http.get(this.url);
+  }
+
+  deleteGasto() {}
+}
